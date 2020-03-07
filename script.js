@@ -22,30 +22,36 @@ function generatePassword(){
 
   // 1) Special Characters
   specialConfirm = confirm("Do you want to use special characters? (e.g. !#$%&'()*+,-./:;<=>?@[\]^_`{|}~");
-
+  if (specialConfirm == true) {
+    passArray = passArray + specialChars;
+  }
   // 2) Numbers 
   numbersConfirm = confirm("Do you want to use numbers?");
-
+  if (numbersConfirm == true) {
+    passArray = passArray + numbers;
+  } 
   // 3) Lowercase
   lowerCaseConfirm = confirm("Do you want to use lowercase letters?");
-
+  if (lowerCaseConfirm == true) {
+    passArray = passArray + lowerCase;
+  }
   // 4) Uppercase
   upperCaseConfirm = confirm("Do you want to use uppercase letters?");
+  if (upperCaseConfirm == true) {
+    passArray = passArray + upperCase;
+  }
 
   // Generate password, based on user specifications.
-
-
   // NOTE: User specifications come from confirms.
-  // 
-  for(var i = 0; i <= 10; i++){
-
+  for(var i = 0; i == passLength - 1; i++){
+    randomPass = passArray[Math.floor(Math.random()*passArray.length)];
   }
-  return "Something";
+  return randomPass;
 };
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword(randomPass);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
