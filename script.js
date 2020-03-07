@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 // Generate Password
-function generatePassword(){
+function generatePassword() {
   // Prompt the user for password length.
   passLength = prompt("How many characters will your password be?");
   // Check to see if the user actually entered a length.
@@ -14,44 +14,46 @@ function generatePassword(){
   }
 
   // 4 Confirms
-  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var numbers = "0123456789";
-  var specialChars = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-  var passArray = [];
+  lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  numbers = "0123456789";
+  specialChars = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var passArray = "";
 
   // 1) Special Characters
   specialConfirm = confirm("Do you want to use special characters? (e.g. !#$%&'()*+,-./:;<=>?@[\]^_`{|}~");
   if (specialConfirm == true) {
-    passArray = passArray + specialChars;
+    passArray = [].concat(passArray, specialChars);
   }
   // 2) Numbers 
   numbersConfirm = confirm("Do you want to use numbers?");
   if (numbersConfirm == true) {
-    passArray = passArray + numbers;
+    passArray = [].concat(passArray, numbers);
   } 
   // 3) Lowercase
   lowerCaseConfirm = confirm("Do you want to use lowercase letters?");
   if (lowerCaseConfirm == true) {
-    passArray = passArray + lowerCase;
+    passArray = [].concat(passArray, lowerCase);
   }
   // 4) Uppercase
   upperCaseConfirm = confirm("Do you want to use uppercase letters?");
   if (upperCaseConfirm == true) {
-    passArray = passArray + upperCase;
+    passArray = [].concat(passArray, upperCase);
   }
 
   // Generate password, based on user specifications.
   // NOTE: User specifications come from confirms.
-  for(var i = 0; i == passLength - 1; i++){
-    randomPass = passArray[Math.floor(Math.random()*passArray.length)];
+  finalPass = "";
+  for(var i = 0; i < passLength; i++) {
+    var randomPass = passArray[Math.floor(Math.random()*passArray.length)];
+    finalPass = [].concat(finalPass, randomPass);
   }
-  return randomPass;
+  return finalPass;
 };
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword(randomPass);
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
