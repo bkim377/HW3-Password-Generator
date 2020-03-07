@@ -19,4 +19,4 @@ The page then generates a random password abiding by all of the user's selected 
 
 -----------------------------------------------
 
-3) Screenshots:
+3) Screenshot of finished page:
