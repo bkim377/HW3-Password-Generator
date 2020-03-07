@@ -1,6 +1,4 @@
 # HW3-PasswordGenerator
-This README needs: screenshots, a description, link to deployed application
-
 1) Description: 
 A password generator that creates a randomized password based on user-chosen criteria.  
 Contains multiple prompts that let the user set the following parameters:
@@ -15,8 +13,8 @@ The page then generates a random password abiding by all of the user's selected 
 
 -----------------------------------------------
 
-2) Deployed Application: 
+2) Deployed Application: https://bkim377.github.io/HW3-Password-Generator/
 
 -----------------------------------------------
 
-3) Screenshot of finished page:
+3) Screenshot of finished page: PasswordGeneratorFinalized.png
