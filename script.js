@@ -23,22 +23,22 @@ function generatePassword() {
   // 1) Special Characters
   specialConfirm = confirm("Do you want to use special characters? (e.g. !#$%&'()*+,-./:;<=>?@[\]^_`{|}~");
   if (specialConfirm == true) {
-    passArray = [].concat(passArray, specialChars);
+    passArray = passArray.concat(specialChars);
   }
   // 2) Numbers 
   numbersConfirm = confirm("Do you want to use numbers?");
   if (numbersConfirm == true) {
-    passArray = [].concat(passArray, numbers);
+    passArray = passArray.concat(numbers);
   } 
   // 3) Lowercase
   lowerCaseConfirm = confirm("Do you want to use lowercase letters?");
   if (lowerCaseConfirm == true) {
-    passArray = [].concat(passArray, lowerCase);
+    passArray = passArray.concat(lowerCase);
   }
   // 4) Uppercase
   upperCaseConfirm = confirm("Do you want to use uppercase letters?");
   if (upperCaseConfirm == true) {
-    passArray = [].concat(passArray, upperCase);
+    passArray = passArray.concat(upperCase);
   }
 
   // Generate password, based on user specifications.
