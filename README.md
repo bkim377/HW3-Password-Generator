@@ -17,4 +17,4 @@ The page then generates a random password abiding by all of the user's selected 
 
 -----------------------------------------------
 
-3) Screenshot of finished page: PasswordGeneratorFinalized.png
+3) Screenshot of finished page: ![Password Generator screenshot](PasswordGeneratorFinalized.png)
